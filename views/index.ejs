@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Campeonato Online</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inscrição para o Campeonato</h1>
+        
+        <% if (mensagem) { %>
+            <div class="alert"><%= mensagem %></div>
+        <% } %>
+
+        <form action="/inscrever" method="POST">
+            <div class="form-group">
+                <label for="discord">Nome do Discord:</label>
+                <input type="text" id="discord" name="discord" placeholder="Ex: usuario#1234" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nome_jogo">Seu Nome no Jogo:</label>
+                <input type="text" id="nome_jogo" name="nome_jogo" placeholder="Ex: NickInGame" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nome_time">Nome do Time:</label>
+                <input type="text" id="nome_time" name="nome_time" placeholder="Ex: Os Imbatíveis" required>
+            </div>
+
+            <div class="form-group">
+                <label for="integrantes">Nomes dos 5 Integrantes do Time:</label>
+                <textarea id="integrantes" name="integrantes" rows="3" placeholder="Liste os 5 membros (incluindo você)" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="funcao">Função Escolhida:</label>
+                <select id="funcao" name="funcao" required>
+                    <option value="">Selecione...</option>
+                    <option value="Sobrevivente">Sobrevivente (Um dos 4)</option>
+                    <option value="Killer">Killer</option>
+                </select>
+            </div>
+
+            <button type="submit">Enviar Inscrição</button>
+        </form>
+    </div>
+</body>
+</html>
