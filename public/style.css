@@ -6,28 +6,130 @@
 }
 
 body {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-image: url('/fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
-    padding: 20px;
+    width: 100vw;
+    margin: 0;
+    padding: 30px 15px;
+    background-color: #121212;
 }
 
 .container {
-    background-color: #1e1e1e;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
     width: 100%;
-    max-width: 500px;
+    max-width: 680px;
 }
 
-h1 {
+/* CARD DO REGULAMENTO */
+.rules-card {
+    background-color: rgba(20, 20, 20, 0.94);
+    border: 2px solid #8b0000;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+    color: #e0e0e0;
+    width: 100%;
+}
+
+.rules-main-title {
+    text-align: center;
+    font-size: 26px;
+    color: #ff3333;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+}
+
+.rule-section {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rule-section h2 {
+    font-size: 18px;
+    color: #03dac6;
+    margin-bottom: 10px;
+}
+
+.rule-section p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.rule-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.rule-section ul ul {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.highlight-red {
+    color: #ff4d4d;
+}
+
+.highlight-warning {
+    color: #ffcc00;
+}
+
+.points-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.point-box {
+    background: rgba(40, 40, 40, 0.6);
+    padding: 12px 15px;
+    border-radius: 6px;
+    border-left: 3px solid #bb86fc;
+}
+
+.point-box h3 {
+    font-size: 15px;
+    color: #bb86fc;
+    margin-bottom: 8px;
+}
+
+.rules-footer {
+    text-align: center;
+    font-weight: bold;
+    color: #03dac6;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+/* CARD DO FORMULÁRIO DE INSCRIÇÃO */
+.form-card {
+    background-color: rgba(30, 30, 30, 0.94);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    width: 100%;
+}
+
+.form-card h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #ffffff;
+    font-size: 22px;
 }
 
 .form-group {
@@ -39,19 +141,20 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
     color: #b0b0b0;
+    font-size: 14px;
 }
 
-input, textarea, select {
+input, select {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #333;
+    padding: 11px;
+    border: 1px solid #444;
     border-radius: 4px;
     background-color: #2b2b2b;
     color: #fff;
     font-size: 14px;
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus, select:focus {
     border-color: #6200ee;
     outline: none;
 }
@@ -67,6 +170,7 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s;
+    margin-top: 5px;
 }
 
 button:hover {

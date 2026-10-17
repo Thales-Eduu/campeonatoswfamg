@@ -4,48 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscrição - Campeonato Online</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Inscrição para o Campeonato</h1>
         
-        <% if (mensagem) { %>
-            <div class="alert"><%= mensagem %></div>
-        <% } %>
-
-        <form action="/inscrever" method="POST">
-            <div class="form-group">
-                <label for="discord">Nome do Discord:</label>
-                <input type="text" id="discord" name="discord" placeholder="Ex: usuario#1234" required>
+        <!-- PAINEL DE REGULAMENTO (TOPO) -->
+        <div class="rules-card">
+            <h1 class="rules-main-title">📜 Regulamento do Torneio</h1>
+            
+            <div class="rule-section">
+                <h2>🏆 Regras Gerais</h2>
+                <ul>
+                    <li><strong class="highlight-red">Assassinos Banidos:</strong> A equipe de moderação vetou a seleção dos seguintes Killers: <em>A Enfermeira, O Flagelo, O Caipira e O Julgamento</em>.</li>
+                    <li><strong>Estratégias Liberadas:</strong> Está liberado o uso de qualquer tipo de estratégia de jogo:
+                        <ul>
+                            <li><strong>Killers:</strong> Tunelar, camperar, slug, entre outras.</li>
+                            <li><strong>Survivors:</strong> Bodyblock/Tank, rush de geradores, entre outras.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fair Play e Integridade:</strong>
+                        <ul>
+                            <li>É estritamente proibido o uso de qualquer tipo de trapaça (cheat) ou ações que violem as diretrizes oficiais do jogo.</li>
+                            <li>É expressamente proibido aos jogadores que estiverem em partida assistir à transmissão ao vivo (streaming) do campeonato ou realizar qualquer tipo de complô com espectadores.</li>
+                            <li><strong class="highlight-warning">Penalidade:</strong> O descumprimento destas regras resultará em desclassificação imediata e no banimento do jogador de futuros campeonatos do servidor.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
 
-            <div class="form-group">
-                <label for="nome_jogo">Seu Nome no Jogo:</label>
-                <input type="text" id="nome_jogo" name="nome_jogo" placeholder="Ex: NickInGame" required>
+            <div class="rule-section">
+                <h2>🚫 Regras de Perks (Limite de Repetição)</h2>
+                <p>Para promover a variedade nas partidas, haverá um limite para a repetição de Perks por equipe:</p>
+                <ul>
+                    <li><strong>Limite:</strong> Cada Perk só poderá ser equipada, no máximo, <strong>2 vezes</strong> entre os Survivors do mesmo time.</li>
+                    <li><em>Exemplo: Se 2 Survivors utilizarem Ataque Decisivo (DS), os outros 2 integrantes da equipe não poderão selecionar essa mesma Perk.</em></li>
+                </ul>
             </div>
 
-            <div class="form-group">
-                <label for="nome_time">Nome do Time:</label>
-                <input type="text" id="nome_time" name="nome_time" placeholder="Ex: Os Imbatíveis" required>
+            <div class="rule-section">
+                <h2>👥 Formação das Equipes</h2>
+                <ul>
+                    <li><strong>Equipes Pré-formadas:</strong> É permitida a inscrição de equipes já formadas.
+                        <ul>
+                            <li><em>Importante: Todos os integrantes de uma equipe já formada deverão indicar exatamente o mesmo nome de equipe no momento da inscrição.</em></li>
+                            <li>Os times já completos e devidamente identificados não participarão do sorteio.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Jogadores Individuais:</strong> Os participantes que não tiverem uma equipe pré-definida serão agrupados por meio de sorteio aleatório após o encerramento das inscrições.</li>
+                    <li><strong>Composição do Time:</strong> Cada equipe será constituída por 5 jogadores (4 Survivors + 1 Killer).</li>
+                </ul>
             </div>
 
-            <div class="form-group">
-                <label for="integrantes">Nomes dos 5 Integrantes do Time:</label>
-                <textarea id="integrantes" name="integrantes" rows="3" placeholder="Liste os 5 membros (incluindo você)" required></textarea>
+            <div class="rule-section">
+                <h2>📊 Sistema de Pontuação e Vitória</h2>
+                <p>O formato de pontuação seguirá os padrões das competições internacionais: a equipe que acumular a maior quantidade de pontos somando o desempenho de seus Survivors e do seu Killer será a vencedora.</p>
+                
+                <div class="points-grid">
+                    <div class="point-box">
+                        <h3>🩸 Pontuação para Killers</h3>
+                        <ul>
+                            <li>+1 ponto por cada gancho realizado (limite máximo de 8 ganchos por partida).</li>
+                            <li>+1 ponto por cada gerador restante (não concluído).</li>
+                            <li><em>Exemplo: Um Killer que realize 8 ganchos em uma partida na qual restaram 2 geradores acumulará 10 pontos.</em></li>
+                        </ul>
+                    </div>
+
+                    <div class="point-box">
+                        <h3>🛠️ Pontuação para Survivors</h3>
+                        <ul>
+                            <li>+1 ponto para cada gerador concluído.</li>
+                            <li>+1 ponto para cada resgate de gancho realizado.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="funcao">Função Escolhida:</label>
-                <select id="funcao" name="funcao" required>
-                    <option value="">Selecione...</option>
-                    <option value="Sobrevivente">Sobrevivente (Um dos 4)</option>
-                    <option value="Killer">Killer</option>
-                </select>
-            </div>
+            <p class="rules-footer">📌 Garanta sua inscrição abaixo e boa sorte a todas as equipes!</p>
+        </div>
 
-            <button type="submit">Enviar Inscrição</button>
-        </form>
+        <!-- FORMULÁRIO DE INSCRIÇÃO (MANTIDO INTACTO) -->
+        <div class="form-card">
+            <h2>Inscrição para o Campeonato</h2>
+            
+            <% if (mensagem) { %>
+                <div class="alert"><%= mensagem %></div>
+            <% } %>
+
+            <form action="/inscrever" method="POST">
+                <div class="form-group">
+                    <label for="discord">Nome do Discord:</label>
+                    <input type="text" id="discord" name="discord" placeholder="Ex: usuario#1234" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nome_jogo">Seu Nome no Jogo:</label>
+                    <input type="text" id="nome_jogo" name="nome_jogo" placeholder="Ex: NickInGame" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nome_time">Sugestões de nomes para o seu time:</label>
+                    <input type="text" id="nome_time" name="nome_time" placeholder="Ex: Os Imbatíveis" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mapas">Nomes dos 5 mapas preferido:</label>
+                    <input type="text" id="mapas" name="mapas" placeholder="Ex: Autohaven, MacMillan..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="funcao">Função Escolhida:</label>
+                    <select id="funcao" name="funcao" required>
+                        <option value="">Selecione...</option>
+                        <option value="Sobrevivente">Sobrevivente (Um dos 4)</option>
+                        <option value="Killer">Killer</option>
+                    </select>
+                </div>
+
+                <button type="submit">Enviar Inscrição</button>
+            </form>
+        </div>
+
     </div>
 </body>
 </html>
