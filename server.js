@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
     res.render('index', { mensagem: null });
 });
 
+// Rota de inscrição
 app.post('/inscrever', async (req, res) => {
     try {
         const { discord, nome_jogo, nome_time, mapas, funcao } = req.body;
@@ -33,6 +34,26 @@ app.post('/inscrever', async (req, res) => {
         }
 
         res.render('index', { mensagem: 'Inscrição realizada com sucesso!' });
+    } catch (err) {
+        res.render('index', { mensagem: 'Erro crítico: ' + err.message });
+    }
+});
+
+// Rota para envio de dúvidas anônimas
+app.post('/duvida', async (req, res) => {
+    try {
+        const { mensagem_duvida } = req.body;
+
+        const { error } = await supabase
+            .from('duvidas')
+            .insert([{ mensagem: mensagem_duvida }]);
+
+        if (error) {
+            console.error('Erro ao enviar dúvida:', error);
+            return res.render('index', { mensagem: 'Erro ao enviar dúvida: ' + error.message });
+        }
+
+        res.render('index', { mensagem: 'Dúvida enviada com sucesso e de forma anônima!' });
     } catch (err) {
         res.render('index', { mensagem: 'Erro crítico: ' + err.message });
     }

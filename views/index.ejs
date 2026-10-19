@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         
-        <!-- PAINEL DE REGULAMENTO (TOPO) -->
+        <!-- REGULAMENTO ATUALIZADO -->
         <div class="rules-card">
             <h1 class="rules-main-title">📜 Regulamento do Torneio</h1>
             
@@ -24,11 +24,12 @@
                             <li><strong>Survivors:</strong> Bodyblock/Tank, rush de geradores, entre outras.</li>
                         </ul>
                     </li>
+                    <li class="highlight-warning"><strong>⚠️ Atenção:</strong> Cabe aos participantes escolherem a melhor estratégia, mas fiquem atentos às regras de pontuação, pois dependendo da estratégia adotada, a equipe poderá somar menos pontos.</li>
                     <li><strong>Fair Play e Integridade:</strong>
                         <ul>
                             <li>É estritamente proibido o uso de qualquer tipo de trapaça (cheat) ou ações que violem as diretrizes oficiais do jogo.</li>
                             <li>É expressamente proibido aos jogadores que estiverem em partida assistir à transmissão ao vivo (streaming) do campeonato ou realizar qualquer tipo de complô com espectadores.</li>
-                            <li><strong class="highlight-warning">Penalidade:</strong> O descumprimento destas regras resultará em desclassificação imediata e no banimento do jogador de futuros campeonatos do servidor.</li>
+                            <li><strong class="highlight-red">Penalidade:</strong> O descumprimento destas regras resultará em desclassificação imediata e no banimento do jogador de futuros campeonatos do servidor.</li>
                         </ul>
                     </li>
                 </ul>
@@ -44,22 +45,23 @@
             </div>
 
             <div class="rule-section">
-                <h2>👥 Formação das Equipes</h2>
+                <h2>👥 Formação e Dinâmica das Equipes</h2>
                 <ul>
+                    <li><strong>Composição do Time:</strong> Cada equipe será constituída por 5 jogadores (4 Survivors + 1 Killer).</li>
+                    <li><strong>Dinâmica de Jogo do Killer:</strong> O Killer faz parte da sua equipe, porém <em>não jogará contra os Survivors do seu próprio time</em>. Ele enfrentará as equipes adversárias para somar pontos para o seu grupo.</li>
                     <li><strong>Equipes Pré-formadas:</strong> É permitida a inscrição de equipes já formadas.
                         <ul>
-                            <li><em>Importante: Todos os integrantes de uma equipe já formada deverão indicar exatamente o mesmo nome de equipe no momento da inscrição.</em></li>
-                            <li>Os times já completos e devidamente identificados não participarão do sorteio.</li>
+                            <li><em>Importante: Todos os 5 integrantes deverão indicar exatamente o mesmo nome de equipe no momento da inscrição.</em></li>
+                            <li>Os times já completos não participarão do sorteio.</li>
                         </ul>
                     </li>
-                    <li><strong>Jogadores Individuais:</strong> Os participantes que não tiverem uma equipe pré-definida serão agrupados por meio de sorteio aleatório após o encerramento das inscrições.</li>
-                    <li><strong>Composição do Time:</strong> Cada equipe será constituída por 5 jogadores (4 Survivors + 1 Killer).</li>
+                    <li><strong>Jogadores Individuais:</strong> Os participantes que se inscreverem sem uma equipe pré-definida serão agrupados por meio de sorteio aleatório após o encerramento das inscrições.</li>
                 </ul>
             </div>
 
             <div class="rule-section">
                 <h2>📊 Sistema de Pontuação e Vitória</h2>
-                <p>O formato de pontuação seguirá os padrões das competições internacionais: a equipe que acumular a maior quantidade de pontos somando o desempenho de seus Survivors e do seu Killer será a vencedora.</p>
+                <p>O formato de pontuação seguirá os padrões das competições internacionais: no final, a pontuação acumulada pelos 4 Survivors e pelo Killer da mesma equipe será somada, e o time com maior pontuação total vence!</p>
                 
                 <div class="points-grid">
                     <div class="point-box">
@@ -67,7 +69,7 @@
                         <ul>
                             <li>+1 ponto por cada gancho realizado (limite máximo de 8 ganchos por partida).</li>
                             <li>+1 ponto por cada gerador restante (não concluído).</li>
-                            <li><em>Exemplo: Um Killer que realize 8 ganchos em uma partida na qual restaram 2 geradores acumulará 10 pontos.</em></li>
+                            <li><em>Exemplo: Um Killer que realize 8 ganchos em uma partida na qual restaram 2 geradores acumulará <strong>10 pontos</strong> para a sua equipe.</em></li>
                         </ul>
                     </div>
 
@@ -81,10 +83,10 @@
                 </div>
             </div>
 
-            <p class="rules-footer">📌 Garanta sua inscrição abaixo e boa sorte a todas as equipes!</p>
+            <p class="rules-footer">📌 Garantam suas inscrições e boa sorte a todas as equipes!</p>
         </div>
 
-        <!-- FORMULÁRIO DE INSCRIÇÃO (MANTIDO INTACTO) -->
+        <!-- FORMULÁRIO DE INSCRIÇÃO -->
         <div class="form-card">
             <h2>Inscrição para o Campeonato</h2>
             
@@ -123,6 +125,20 @@
                 </div>
 
                 <button type="submit">Enviar Inscrição</button>
+            </form>
+        </div>
+
+        <!-- SEÇÃO NOVA: DÚVIDAS ANÔNIMAS -->
+        <div class="form-card faq-card">
+            <h2>❓ Tirar Dúvidas (Anônimo)</h2>
+            <p class="faq-desc">Ficou com alguma dúvida sobre o campeonato ou regulamento? Envie abaixo de forma 100% anônima para a organização!</p>
+
+            <form action="/duvida" method="POST">
+                <div class="form-group">
+                    <label for="mensagem_duvida">Sua Dúvida:</label>
+                    <textarea id="mensagem_duvida" name="mensagem_duvida" rows="4" placeholder="Escreva sua dúvida aqui..." required></textarea>
+                </div>
+                <button type="submit" class="btn-secondary">Enviar Dúvida Anônima</button>
             </form>
         </div>
 
